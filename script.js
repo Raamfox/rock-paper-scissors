@@ -34,10 +34,15 @@ Use these two parameters to take the human and computer choices as arguments.*/
 "rock","ROCK","RoCk" or other variations.*/
 /* Write the code for your playRound function to console.log a string value 
 repreenting the round winner, such as "You lose! Paper beats Rock". */
-// Increment the humanScore or computerScore variable based on th round winner
+// Increment the humanScore or computerScore variable based on the round winner
+function gameLogic(humanChoice,computerChoice){
+    
+
+}
+
 function playRound(humanChoice, computerChoice){
     const caseInSenHumanChoice = humanChoice.toLowerCase(); 
-    const caseInSenComputerChoice = computerChoice.toLowerCase();
+    
 
 }
 
