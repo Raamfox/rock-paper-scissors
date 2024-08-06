@@ -18,8 +18,14 @@ console.log(getComputerChoice());
 /* Write the code so that getHumanChoice will return on of the valid choices
 depending on what the user input*/
 function getHumanChoice(){
-    let userInput = prompt("Rock, Paper or Scissors");
-    return userInput;
+    const userInput = prompt("Rock, Paper or Scissors").toLowerCase();
+
+    if(userInput === "rock" || userInput === "paper" || userInput === "scissors") {
+        return userInput;
+    } else {
+        alert("Invalid choice")
+        return getHumanChoice();
+    }
 }
 
 
@@ -35,18 +41,35 @@ Use these two parameters to take the human and computer choices as arguments.*/
 /* Write the code for your playRound function to console.log a string value 
 repreenting the round winner, such as "You lose! Paper beats Rock". */
 // Increment the humanScore or computerScore variable based on the round winner
-function gameLogic(humanChoice,computerChoice){
-    
-
-}
 
 function playRound(humanChoice, computerChoice){
-    const caseInSenHumanChoice = humanChoice.toLowerCase(); 
+    if(humanChoice === computerChoice){
+        console.log("It's a tie!");
+    } else if (humanChoice === "rock" && computerChoice === "scissors"){
+        console.log("You win! Rock beats Scissors");
+        humanScore++;
+    } else if (humanChoice === "rock" && computerChoice === "paper"){
+        console.log("You lose! Paper beats Rock");
+        computerScore++;
+    } else if (humanChoice === "paper" && computerChoice === "rock"){
+        console.log("You win! Paper beats Rock");
+        humanScore++;
+    } else if (humanChoice === "paper" && computerChoice === "scissors"){
+        console.log("You lose! Scissors beat Paper");
+        computerScore++;
+    } else if (humanChoice === "scissors" && computerChoice === "rock"){
+        console.log("You lose! Rock beats Scissors");
+        computerScore++;
+    } else if (humanChoice === "scissors" && computerChoice === "paper"){
+        console.log("You win! Scissors beat Paper");
+        humanScore++;
+    }
     
-
+    console.log("Your Score: " + humanScore + " ComputerScore: " + computerScore);
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
+
