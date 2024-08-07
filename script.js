@@ -33,7 +33,7 @@ function playRound(humanChoice, computerChoice){
         console.log(`The computers choice was: --- ${computerChoice}`);
         console.log("It's a tie!");
 
-    } else if (humanChoice === "rock" && computerChoice === "scissors" || 
+    } if (humanChoice === "rock" && computerChoice === "scissors" || 
         humanChoice === "scissors" && computerChoice === "paper" || 
         humanChoice === "paper" && computerChoice === "rock"){
         console.log(`Your choice was: --- ${humanChoice}`);
